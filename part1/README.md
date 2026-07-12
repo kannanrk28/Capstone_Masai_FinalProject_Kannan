@@ -1,3 +1,68 @@
+Part 1 – Data Preprocessing and Exploratory Data Analysis (EDA)
+===
+Outline
+====
+
+1. Dataset Overview
+Loaded the TMDB Movies dataset.
+Examined the dataset dimensions, data types, and missing values.
+Identified numerical, categorical, and date columns.
+
+2. Data Type Validation
+Validated the data types of all columns.
+Verified integer, floating-point, and text columns.
+Identified release_date as an object and recommended conversion to datetime for time-based analysis.
+Converted repetitive categorical columns to category dtype where appropriate.
+
+3. Missing Value Analysis
+Identified columns containing missing values.
+Compared mean and median values for skewed columns.
+Selected median imputation for positively skewed variables.
+Confirmed all missing values were removed after imputation.
+
+4. Descriptive Statistics
+Generated summary statistics for numerical features.
+Computed skewness to identify non-normal distributions.
+Identified the popularity column as the most positively skewed feature.
+
+5. Outlier Detection
+Used box plots to identify potential outliers.
+Determined that extreme popularity and revenue values represent genuine blockbuster movies.
+Retained outliers to preserve important business information.
+
+6. Data Visualization
+Histogram of the most skewed feature (Popularity).
+Scatter plot showing the relationship between Budget and Revenue.
+Box plot comparing Vote Average across Primary Genres.
+Correlation Heatmap for all numerical variables.
+
+7. Correlation Analysis
+Calculated Pearson correlation coefficients.
+Identified strong positive correlations between:
+Revenue ↔ Revenue Adjusted
+Budget ↔ Budget Adjusted
+Explained why correlation does not imply causation.
+
+8. Spearman Correlation
+Compared Pearson and Spearman correlations.
+Identified variable pairs with strong monotonic but non-linear relationships.
+Recommended considering Spearman correlation during feature selection.
+
+9. Grouped Aggregation
+Grouped movies by Primary Genre.
+Calculated:
+Mean Popularity
+Standard Deviation
+Movie Count
+Evaluated genre-wise popularity differences.
+Assessed whether Primary Genre provides predictive information.
+
+10. Data Cleaning Output
+Removed noisy and unnecessary information where appropriate.
+Saved the cleaned dataset as:
+
+
+
 Data Type Validation Summary
 =============================
 
@@ -86,3 +151,13 @@ The ratio of the highest group mean to the lowest group mean was calculated as:
 Ratio = <ratio>
 
 A ratio substantially greater than 1 indicates that average popularity differs across genres, suggesting that primary_genre carries useful predictive information. However, because there is also considerable variation within some genres, it should be used together with other features rather than as the sole predictor.
+
+
+Summary
+===
+
+The first phase of the project focused on understanding, cleaning, and preparing the TMDB Movies dataset for machine learning. The dataset was inspected for data types, missing values, skewness, and outliers to ensure data quality. Median imputation was selected for highly skewed numerical features because it is less sensitive to extreme values than the mean. Exploratory Data Analysis (EDA) using histograms, scatter plots, box plots, and correlation heatmaps provided insights into the relationships among movie attributes such as budget, popularity, revenue, and genres.
+
+Correlation analysis revealed strong relationships between inflation-adjusted and original financial variables, while Spearman correlation highlighted several important monotonic relationships that may not be captured by Pearson correlation. Grouped aggregation showed that movie popularity varies across genres, although genre alone is insufficient to accurately predict popularity due to high within-group variation. Outliers representing blockbuster movies were retained because they reflect genuine business observations rather than data quality issues.
+
+Overall, Part 1 established a reliable and well-prepared dataset by validating data quality, handling missing values, understanding feature distributions, and performing exploratory analysis. The resulting cleaned_data.csv provides a high-quality foundation for the regression and classification models developed in Parts 2 and 3.
