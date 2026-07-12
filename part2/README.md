@@ -1,3 +1,57 @@
+Part 2 – Outline
+======
+
+1. Feature Selection and Target Definition
+Defined the regression target (revenue) and binary classification target (y_clf).
+Removed noisy, redundant, and data leakage features.
+Prepared the feature matrix for model training.
+
+2. Categorical Feature Encoding
+Applied one-hot encoding to the genres column.
+Excluded high-cardinality features (director and production_companies) to reduce model complexity.
+Justified why label encoding was not suitable for nominal categories.
+
+3. Train-Test Split and Feature Scaling
+Split the dataset into training (80%) and testing (20%) sets.
+Applied StandardScaler using only the training data.
+Prevented data leakage by transforming the test data using the fitted scaler.
+
+4. Regression Modeling
+Trained Linear Regression and Ridge Regression models.
+Evaluated models using Mean Squared Error (MSE) and R² Score.
+Compared regression performance.
+Interpreted feature coefficients and identified the most influential predictors.
+Examined multicollinearity using the correlation heatmap.
+
+5. Classification Modeling
+Built a Logistic Regression classifier.
+Evaluated the model using:
+Confusion Matrix
+Accuracy
+Precision
+Recall
+F1-score
+ROC-AUC
+Explained the business importance of Recall for this project.
+
+6. Decision Threshold Optimization
+Evaluated multiple decision thresholds.
+Compared Precision, Recall, and F1-score.
+Identified the optimal threshold based on the highest F1-score.
+Discussed the trade-off between Precision and Recall.
+
+7. Regularization Experiment
+Compared Logistic Regression models with different values of C.
+Evaluated the effect of stronger L2 regularization.
+Compared Precision, Recall, F1-score, and ROC-AUC.
+Selected the best regularization parameter.
+
+8. Bootstrap Confidence Interval
+Performed bootstrap resampling to compare Logistic Regression models.
+Estimated the mean AUC difference.
+Calculated the 95% confidence interval.
+Verified the statistical significance of the performance difference.
+
 
 PART 2 - TASK 1 - Identify the features and label. Remove Noisy and Leaky feature
 ==================================================================================
@@ -223,3 +277,14 @@ Mean AUC Difference: 0.0082
 95% Confidence Interval: [0.0053, 0.0115]
 
 The 95% confidence interval does not include zero, indicating that the baseline model (C = 1.0) consistently achieves a higher AUC than the strongly regularized model (C = 0.01) across different bootstrap samples. This suggests that the observed improvement is statistically reliable rather than due to random variation in the test data. Although the average improvement in AUC (0.0082) is relatively small, it consistently favors the baseline model, making C = 1.0 the preferred choice for this dataset.
+
+
+Part 2 – Summary
+================
+Part 2 focused on building and evaluating both regression and classification machine learning models using the cleaned movie dataset prepared in Part 1. Feature selection was performed by removing noisy, redundant, and data leakage variables, followed by one-hot encoding of the genres column. The dataset was then split into training and testing sets, and feature scaling was applied using StandardScaler to prevent data leakage and improve model performance.
+
+For the regression task, Linear Regression and Ridge Regression were trained to predict movie revenue. Both models produced similar results, with Linear Regression achieving a slightly lower Mean Squared Error (MSE) and a marginally higher R² score. Feature coefficient analysis identified Budget, Runtime, and History as the most influential predictors of movie revenue.
+
+For the classification task, Logistic Regression was used to predict whether a movie's revenue would be above or below the median. The model was evaluated using Accuracy, Precision, Recall, F1-score, and ROC-AUC. Decision threshold analysis demonstrated that lowering the threshold improved Recall while reducing Precision, with a threshold of 0.35 providing the best balance between both metrics. A regularization experiment showed that the baseline model (C = 1.0) outperformed the strongly regularized model (C = 0.01). Finally, bootstrap analysis confirmed that the improvement in ROC-AUC was statistically reliable, supporting the selection of the baseline Logistic Regression model.
+
+Overall, Part 2 established strong baseline regression and classification models, demonstrated effective feature engineering and evaluation techniques, and provided a solid foundation for the advanced tree-based models developed in Part 3.
