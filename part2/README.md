@@ -1,3 +1,8 @@
+Pre-requisites:
+===
+The cleaned data are used from the part 1
+
+
 Part 2 – Outline
 ======
 
