@@ -1,3 +1,11 @@
+Pre-requisites:
+===
+The scaled and encoded data are used from the part 2
+
+Note:
+=====
+My model predictionn are been saved in the pickel file name "best_model.pkl" as a result of Part 3
+
 Part 3 – Outline
 ==========
 
