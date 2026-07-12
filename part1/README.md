@@ -1,5 +1,9 @@
 Part 1 – Data Preprocessing and Exploratory Data Analysis (EDA)
-===
+
+Note: 
+==
+Raw data is fetched from "dataset" folder which is inside the main folder. To avoid confusion, I have put raw dataset (uncleaned) and clean dataset (from Part1) in the separate folder
+
 Outline
 ====
 
