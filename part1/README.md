@@ -2,7 +2,8 @@ Part 1 – Data Preprocessing and Exploratory Data Analysis (EDA)
 
 Note: 
 ==
-Raw data is fetched from "dataset" folder which is inside the main folder. To avoid confusion, I have put raw dataset (uncleaned) and clean dataset (from Part1) in the separate folder
+Raw data is fetched from "dataset" folder which is inside the main folder. To avoid confusion, I have put raw dataset (uncleaned) and clean dataset (from Part1) in the separate folder.The below link is maintaing Raw data and Cleaned Data in the form of csv file format
+https://github.com/kannanrk28/Capstone_Masai_FinalProject_Kannan/tree/0f7937b81ecd5e14c85cbb2928dc58f303d864de/dataset
 
 Outline
 ====
