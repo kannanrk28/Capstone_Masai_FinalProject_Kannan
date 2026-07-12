@@ -1,3 +1,7 @@
+API Setup Pre-Requisite:
+====
+This project uses secure key management. When you run the notebook, you will be prompted to securely enter your API key. If running in an automated environment, please ensure the LLM_API_KEY, LLM_API_URL and LLM_API_MODEL environment variable is pre-set
+
 Part 4 – Outline
 =======
 
@@ -33,6 +37,7 @@ Confirmed successful operation of the guardrail and explanation pipeline.
 
 LLM API Connection Test
 =========================
+
 A reusable call_llm() function was implemented to communicate with the LLM API using an HTTP POST request. Before sending the request, the input was passed through the PII guardrail to ensure that it did not contain any personally identifiable information.
 
 Test Result
