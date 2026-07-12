@@ -1,3 +1,62 @@
+Part 3 – Outline
+==========
+
+1. Decision Tree Baseline
+Trained a baseline Decision Tree classifier using default parameters.
+Evaluated training and test accuracy.
+Analyzed overfitting caused by unrestricted tree growth.
+
+2. Controlled Decision Tree
+Applied tree regularization using max_depth and min_samples_split.
+Compared training and test performance with the baseline model.
+Evaluated improvements in model generalization.
+
+3. Gini vs Entropy Comparison
+Trained Decision Tree models using both Gini and Entropy criteria.
+Compared classification accuracy.
+Explained Gini impurity and Entropy concepts.
+
+4. Random Forest Classifier
+Built a Random Forest classifier.
+Evaluated Training Accuracy, Test Accuracy, and ROC-AUC.
+Identified the top five most important features.
+
+5. Gradient Boosting Classifier
+Trained a Gradient Boosting model.
+Evaluated Training Accuracy, Test Accuracy, and ROC-AUC.
+Compared performance with Decision Tree and Random Forest models.
+
+6. Feature Ablation Study
+Removed the five least important features identified by Random Forest.
+Compared ROC-AUC before and after feature removal.
+Evaluated the effect of feature reduction on model performance.
+
+7. Cross-Validation
+Performed 5-fold Stratified Cross-Validation.
+Compared Logistic Regression, Decision Tree, Random Forest, and Gradient Boosting.
+Evaluated model stability using Mean ROC-AUC and Standard Deviation.
+
+8. Hyperparameter Tuning
+Tuned the Random Forest model using GridSearchCV.
+Identified the optimal hyperparameters.
+Compared Grid Search with Randomized Search.
+
+9. Manual Learning Curve
+Trained the tuned Random Forest model using progressively larger training subsets.
+Compared Training AUC and Test AUC.
+Evaluated whether model performance was limited by training data or model complexity.
+
+10. Model Serialization
+Saved the best-performing pipeline using Joblib.
+Reloaded the saved model.
+Verified prediction on new movie records.
+
+11. Model Comparison and Selection
+Compared all classification models.
+Selected the best-performing model for deployment.
+Justified the final model selection.
+
+
 Decision Tree Baseline
 ========================
 A baseline Decision Tree Classifier was trained using the default parameters (max_depth=None).
@@ -276,3 +335,14 @@ Gradient Boosting is the recommended model for deployment.
 Justification
 =================
 Gradient Boosting achieved the highest cross-validated ROC-AUC (0.8752) and the highest test ROC-AUC (0.8732) among all evaluated models, indicating the strongest ability to distinguish between high-revenue and low-revenue movies. It also maintained similar training and test accuracy, suggesting good generalization without significant overfitting. Compared with Logistic Regression, Decision Tree, and Random Forest, Gradient Boosting consistently delivered the best overall predictive performance. Therefore, it is the most suitable model for deployment because it provides the best balance between accuracy, robustness, and generalization on unseen data.
+
+
+Part 3 – Summary
+======
+Part 3 focused on developing and evaluating advanced tree-based machine learning models for predicting whether a movie would achieve above-median revenue. The study began with a baseline Decision Tree, which demonstrated severe overfitting due to unrestricted tree growth. A controlled Decision Tree using max_depth and min_samples_split significantly improved generalization by reducing the gap between training and testing performance. Additional experiments comparing Gini and Entropy splitting criteria showed that Gini achieved slightly better classification accuracy for this dataset.
+
+Ensemble learning techniques were then explored using Random Forest and Gradient Boosting classifiers. Random Forest demonstrated strong predictive performance while providing feature importance scores that identified Budget, Runtime, Release Year, Release Month, and Adventure as the most influential predictors. A feature ablation study confirmed that removing the least important features had a negligible impact on ROC-AUC, suggesting that these features contributed little to the overall predictive performance. Gradient Boosting achieved the highest test accuracy and ROC-AUC among all evaluated models, indicating superior generalization and classification capability.
+
+Model robustness was further evaluated using 5-fold Stratified Cross-Validation, which showed consistent performance across multiple data partitions. Hyperparameter tuning with GridSearchCV identified the optimal Random Forest configuration after evaluating 18 parameter combinations across 90 model fits. A manual learning curve analysis demonstrated that additional training data continued to improve model performance, although the rate of improvement gradually decreased. Finally, the best-performing model pipeline was serialized using Joblib, enabling efficient deployment without retraining.
+
+Overall, Gradient Boosting was selected as the recommended deployment model because it achieved the highest cross-validated ROC-AUC (0.8752) and the highest test ROC-AUC (0.8732), while maintaining strong generalization and minimal overfitting. This makes it the most reliable model for predicting movie revenue classes in this project.
