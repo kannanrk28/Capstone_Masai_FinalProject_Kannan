@@ -1,6 +1,16 @@
-API Setup Pre-Requisite:
-====
-This project uses secure key management. When you run the notebook, you will be prompted to securely enter your API key. If running in an automated environment, please ensure the LLM_API_KEY, LLM_API_URL and LLM_API_MODEL environment variable is pre-set
+Environment Setup for Evaluator
+======
+The Part 4 notebook has been successfully executed and validated in Google Colab using my own OpenRouter API credentials. For security reasons, the API key is not included in this repository.
+
+To run the notebook, please choose one of the following options:
+
+Create a .env file using the provided sample.env template and add your own OpenRouter API credentials, or
+Run the notebook without a .env file. The notebook will automatically prompt you to securely enter:
+LLM_API_KEY
+LLM_API_URL (press Enter to use the default value)
+LLM_MODEL (press Enter to use the default model)
+
+Once the required configuration is provided, the notebook will execute successfully and reproduce the results presented in this project.
 
 Part 4 – Outline
 =======
