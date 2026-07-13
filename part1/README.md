@@ -111,9 +111,22 @@ Scatter Plot:
 
 A scatter plot was created to examine the relationship between movie budget and revenue. The plot shows a positive relationship, indicating that movies with higher production budgets generally tend to generate higher box office revenue. However, the points are widely scattered, suggesting a moderate positive correlation, as factors such as movie quality, marketing, audience reception, and competition also influence revenue.
 
-Box Plot:
-=========
-compare movie ratings (vote_average) across different primary genres. Documentary movies have the highest median rating, while Horror and Foreign genres have comparatively lower median ratings. The spread (IQR) varies across genres, with Music and Foreign showing greater variability in ratings. Several outliers are present in most genres, representing movies with exceptionally high or low ratings. These outliers are genuine observations and were retained for further analysis.
+
+Box Plot: Distribution of Movie Ratings by Primary Genre
+===
+A box plot was created to compare the distribution of average movie ratings (vote_average) across the primary movie genres. To improve readability, only the primary genre (the first genre listed for each movie) was considered, and the number of movies in each genre is shown in parentheses on the x-axis.
+
+Interpretation
+===
+Documentary, Unknown, and Music genres have the highest median ratings, indicating that movies in these genres generally receive better audience ratings.
+Horror and Foreign genres have comparatively lower median ratings, suggesting relatively lower audience appreciation.
+Genres such as Drama, Adventure, Crime, and History show moderate to high median ratings with relatively consistent distributions.
+The spread of each box (Interquartile Range, IQR) varies across genres, indicating that some genres have greater variability in movie ratings than others.
+The number of movies differs significantly across genres, with Drama containing the largest number of movies (n = 2453), while genres such as Foreign, Unknown, and History contain relatively few observations.
+
+Conclusion
+====
+Movie ratings vary across genres, indicating that primary genre influences audience ratings to some extent. However, the overlap between box plots and the variation within genres suggest that genre alone is not sufficient to predict movie ratings accurately. Other factors such as budget, cast, director, storyline, marketing, and audience preferences should also be considered when developing predictive machine learning models.
 
 Correlation Heat Map
 ===================
